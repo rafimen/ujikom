@@ -60,7 +60,19 @@
    </svg>
      Log out
    </a>
-
+   <div class="container">
+<h3 style="text-align: center;">DATA BARANG</h3>
+<table class="table">
+   <thead>
+      <tr>
+       <th scope="col">pegawai_id</th>
+       <th scope="col">nama_pegawai</th>
+       <th scope="col">username</th>
+       <th scope="col">password</th>
+       <th scope="col">telp</th>
+       <th scope="col">level</th>
+     </tr>
+   </thead>
       </div>
     </div>
   </div>

@@ -9,6 +9,9 @@ class admincontroller extends Controller
     function home(){
         return view('home');
     }
+    function pegawai(){
+        
+    }
     
 }
 

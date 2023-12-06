@@ -61,6 +61,30 @@
      Log out
    </a>
 
+   <div class="container">
+<form action={{url("/update/$produk->produkid")}} method="POST">
+  @method("POST")
+  @csrf
+<div>
+  <label for="exampleFormControlTextarea1" class="form-label">nama barang</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="namabarang"></textarea>
+  </div>
+  <div>
+  <label for="exampleFormControlTextarea1" class="form-label">harga barang</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="harga"></textarea>
+  </div>
+  <div>
+  <label for="exampleFormControlTextarea1" class="form-label">stok barang</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="stok"></textarea>
+  </div>
+
+  <button  class="btn btn-primary" type="submit">update</button>
+
+  </form>
+  </div>
+</div>
+</div>
+
       </div>
     </div>
   </div>

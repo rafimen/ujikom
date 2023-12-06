@@ -9,6 +9,7 @@
 </head>
 <body>
   @include('layout.nav') 
+<div style="display:flex;">
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 200px; left:10%; height:90vh;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"></use></svg>
@@ -60,6 +61,32 @@
    </svg>
      Log out
    </a>
+   </div>
+   <div class="container">
+<h3 style="text-align: center;">DATA BARANG</h3>
+<table class="table">
+   <thead>
+       <tr>
+       <th scope="col">produkid</th>
+       <th scope="col">nama barang</th>
+       <th scope="col">harga</th>
+       <th scope="col">stok barang</th>
+       <th scope="col">opsi</th>
+       </tr>
+   </thead>
+   <tbody>
+  @foreach($produk as $produk)                                                             
+  <tr>
+  <td>{{$produk->produkid}}</td>
+  <td>{{$produk->namaproduk}}</td>
+  <td>{{$produk->harga}}</td>
+  <td>{{$produk->stok}}</td>
+  <td>
+
+  </td>
+</tr>
+@endforeach
+</tbody>
 
       </div>
     </div>

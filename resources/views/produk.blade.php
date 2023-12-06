@@ -9,6 +9,7 @@
 </head>
 <body>
   @include('layout.nav') 
+<div style="display:flex;">
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 200px; left:10%; height:90vh;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"></use></svg>
@@ -60,7 +61,49 @@
    </svg>
      Log out
    </a>
+   </div>
+   <div class="container">
+<h3 style="text-align: center;">DATA BARANG</h3>
+<table class="table">
+   <thead>
+       <tr>
+       <th scope="col">produkid</th>
+       <th scope="col">nama barang</th>
+       <th scope="col">harga</th>
+       <th scope="col">stok barang</th>
+       <th scope="col">opsi</th>
+       </tr>
+   </thead>
+   <tbody>
+  @foreach($produk as $produk)                                                             
+  <tr>
+  <td>{{$produk->produkid}}</td>
+  <td>{{$produk->namaproduk}}</td>
+  <td>Rp {{$produk->harga}}</td>
+  <td>{{$produk->stok}}</td>
+  <td>
+    <a href="hapus/{{$produk->produkid}}" class="btn btn-outline-danger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+</svg>
+</a>
+  </td>
+  <td>
+  <a href="detail/{{$produk->produkid}}" class="btn btn-outline-danger">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+  <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+  <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
+</svg>
+  </a>
+  </td>
+  <td>
+<a href="update/{{$produk->produkid}}" class="btn btn-outline-danger">
 
+</a></td>
+</tr>
+@endforeach
+</tbody>
+<button class="btn btn-primary" type="submit" href>Button</button>
       </div>
     </div>
   </div>
