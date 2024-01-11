@@ -45,7 +45,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="customers" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use>
           <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
         </svg>
@@ -54,7 +54,7 @@
       </li>
     </ul>
     <hr>
-    <a href="customers" class="nav-link text-white">
+    <a href="#" class="nav-link text-white">
      <svg class="bi me-2" width="30" height="16"><use xlink:href="#people-circle"></use>
  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -67,41 +67,20 @@
 <table class="table">
    <thead>
        <tr>
-       <th scope="col">produkid</th>
-       <th scope="col">nama barang</th>
-       <th scope="col">harga</th>
-       <th scope="col">stok barang</th>
+       <th scope="col">id</th>
+       <th scope="col">nama pelanggan</th>
+       <th scope="col">alamat</th>
+       <th scope="col">nomor telepon</th>
        <th scope="col">opsi</th>
        </tr>
    </thead>
    <tbody>
-  @foreach($produk as $produk)                                                             
+  @foreach($pelanggan as $pelanggan)                                                             
   <tr>
-  <td>{{$produk->produkid}}</td>
-  <td>{{$produk->namaproduk}}</td>
-  <td>Rp {{$produk->harga}}</td>
-  <td>{{$produk->stok}}</td>
-  <td>
-    <a href="hapus/{{$produk->produkid}}" class="btn btn-outline-danger">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-</svg>
-</a>
-  </td>
-  <td>
-  <a href="detail/{{$produk->produkid}}" class="btn btn-outline-danger">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
-  <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-  <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
-</svg>
-  </a>
-  </td>
-  <td>
-<a href="update/{{$produk->produkid}}" class="btn btn-outline-danger">
-
-</a></td>
-</tr>
-@endforeach
+  <td>{{$pelanggan->namapelanggan}}</td>
+  <td>{{$pelanggan->alamat}}</td>
+  <td>{{$pelanggan->nomortelepon}}</td>
+  </tr>
 </tbody>
 <a href="tambahproduk" class="btn btn-danger" type="submit" href>tambah</a>
       </div>

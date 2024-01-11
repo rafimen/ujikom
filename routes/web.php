@@ -5,6 +5,9 @@ use App\Http\Controllers\admincontroller;
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\registercontroller;
+use App\Http\Controllers\pelanggancontroller;
+
+
 
 
 Route::get('/register', [registercontroller::class,'register']);
@@ -23,3 +26,7 @@ Route::get('/hapus/{id}', [produkcontroller::class,'hapus']);
 Route::get('/detail/{id}', [produkcontroller::class,'detail']);
 Route::get('/update/{id}', [produkcontroller::class,'update']);
 Route::POST('/update/{id}', [produkcontroller::class,'proses_update']);
+
+Route::get('/pelanggan', [pelanggancontroller::class,'pelanggan']);
+Route::get('/tambahpelanggan', [pelanggancontroller::class,'tambah_pelanggan']);
+Route::POST('/tambahpelanggan', [pelanggancontroller::class,'proses_pelanggan']);
