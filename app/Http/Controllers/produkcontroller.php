@@ -36,11 +36,11 @@ class produkcontroller extends Controller
           return redirect('/produk');
       }
       function detail($id){
-        $produk = DB::table('produk')->get();
-        return view('detail',['produk' => $produk]);
+        $produk = DB::table('produk')->where('produkid', $id)->get();
+        return view('/detail',['produk' => $produk]);
       }
       function update($id){
-        $produk = DB::table('produk')->where('produkid', $id)->first ();
+        $produk = DB::table('produk')->where('produkid', $id)->first();
         return view('/update',['produk' =>$produk]);
       }  
         

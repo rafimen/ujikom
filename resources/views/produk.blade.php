@@ -103,7 +103,7 @@
 </tr>
 @endforeach
 </tbody>
-<button class="btn btn-primary" type="submit" href>Button</button>
+<a href="tambahproduk" class="btn btn-danger" type="submit" href>tambah</a>
       </div>
     </div>
   </div>
