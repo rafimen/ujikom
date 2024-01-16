@@ -6,7 +6,7 @@ use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\registercontroller;
 use App\Http\Controllers\pelanggancontroller;
-
+use App\Http\Controllers\penjualancontroller;
 
 
 
@@ -30,3 +30,12 @@ Route::POST('/update/{id}', [produkcontroller::class,'proses_update']);
 Route::get('/pelanggan', [pelanggancontroller::class,'pelanggan']);
 Route::get('/tambahpelanggan', [pelanggancontroller::class,'tambah_pelanggan']);
 Route::POST('/tambahpelanggan', [pelanggancontroller::class,'proses_pelanggan']);
+
+
+Route::get('/delete/{id}', [pelanggancontroller::class,'delete']);
+Route::get('/detailpelanggan/{id}', [pelanggancontroller::class,'detailpelanggan']);
+Route::get('/updatepelanggan/{id}', [pelanggancontroller::class,'updatepelanggan']);
+Route::POST('/updatepelanggan/{id}', [pelanggancontroller::class,'proses_update']);
+
+
+Route::get('/penjualan', [penjualancontroller::class,'penjualan']);

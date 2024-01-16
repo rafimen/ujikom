@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-  @include('layout.nav')
-  <div style="display:flex;">
+  @include('layout.nav') 
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 200px; left:10%; height:90vh;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"></use></svg>
@@ -61,12 +60,13 @@
    </svg>
      Log out
    </a>
-</div>
-     <div class="container">
-<form method="POST" action="tambahpelanggan" >
-@csrf
-@method('POST')
 
+   <div class="container">
+<form action={{url("/updatepelanggan/$pelanggan->pelangganid")}} method="POST">
+  @method("POST")
+  @csrf
+<div>
+ 
 <label for="exampleFormControlTextarea1" class="form-label">nama pelanggan</label>
 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="namapelanggan"></textarea>
 <label for="exampleFormControlTextarea1" class="form-label">alamat</label>
@@ -74,8 +74,17 @@
 <label for="exampleFormControlTextarea1" class="form-label">no.telp</label>
 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="nomortelepon"></textarea>
 <button  class="btn btn-primary" type="submit">buy</button>
+
+  </form>
+  </div>
 </div>
 </div>
-</form>
+
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+</div>
 </body>
 </html>

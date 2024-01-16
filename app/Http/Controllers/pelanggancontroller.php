@@ -30,8 +30,27 @@ class pelanggancontroller extends Controller
                
           ]);
           return redirect('/pelanggan');
-      }
+    }
+      function delete($id){
+        DB::table('pelanggan')->where('pelangganid', '=' ,$id)->delete();
+       return redirect('/pelanggan');
+    }
+      function detailpelanggan($id){
+      $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->get();
+      return view('/detailpelanggan',['pelanggan' => $pelanggan]);
+   }
+      function updatepelanggan($id){
+     $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->first();
+     return view('/updatepelanggan',['pelanggan' =>$pelanggan]);
+   }  
+     
+function proses_update(request $request , $id){
+ $namapelanggan = $request-> namapelanggan;
+ DB::table('pelanggan')->where('pelangganid',$id )->update([
+     'namapelanggan' => $namapelanggan
+ ]);
+ return redirect('/pelanggan');
       
    }
 
-
+      }

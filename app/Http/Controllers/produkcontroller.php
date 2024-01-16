@@ -28,7 +28,7 @@ class produkcontroller extends Controller
                
           ]);
           return redirect('/produk');
-      }
+      
       
    }
         function hapus($id){
@@ -49,7 +49,8 @@ class produkcontroller extends Controller
     DB::table('produk')->where('produkid',$id )->update([
         'namaproduk' => $namaproduk
     ]);
-    return redirect('/home');
+    return redirect('/produk');
 }
-      
+
+}
 

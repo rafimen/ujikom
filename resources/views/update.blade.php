@@ -60,14 +60,14 @@
    </svg>
      Log out
    </a>
-
+   </div>
    <div class="container">
 <form action={{url("/update/$produk->produkid")}} method="POST">
   @method("POST")
   @csrf
 <div>
   <label for="exampleFormControlTextarea1" class="form-label">nama barang</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="namabarang"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="namaproduk"></textarea>
   </div>
   <div>
   <label for="exampleFormControlTextarea1" class="form-label">harga barang</label>
@@ -86,7 +86,7 @@
 </div>
 
       </div>
-    </div>
+   
   </div>
 </nav>
   </div>
