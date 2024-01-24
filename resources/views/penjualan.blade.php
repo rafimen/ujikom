@@ -17,7 +17,7 @@
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"></use></svg>
       <span class="fs-6" style="left:10%;">Kasir-Men</span>
-    </a>
+    </a>   
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
@@ -93,28 +93,35 @@
        </tr>
    </thead>
    <tbody>
-  @foreach($produk as $produk)                                                             
+  @foreach($produk as $produk)                                                          
   <tr>
   <td>{{$produk->produkid}}</td>
   <td>{{$produk->namaproduk}}</td>
   <td>Rp {{$produk->harga}}</td>
   <td>{{$produk->stok}}</td>
+ 
   <td>
     <div style="width:40%;">
     <input type="number" class="form-control" name="Qty" placeholder="Qty" min="1" required></div>
   </td>
-</tr>
 @endforeach
+</tr>
+</form>
+</table>
 </tbody>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
+
   </div>
   </div>
+   </table>
+  </div>     
+ 
   </div>
- </div>
+
   <div class="container">
 <h3 style="text-align: center;">DATA BARANG</h3>
 <table class="table">
@@ -126,11 +133,11 @@
        </tr>
    </thead>
    <tbody>
-  @foreach($penjual as $penjual)                                                             
+  @foreach($jual as $jual)                    
   <tr>
-  <td>{{$penjual->penjualanid}}</td>
-  <td>{{$penjual->tanggalpejual}}</td>
-  <td>{{$penjual->totalharga}}</td>
+  <td>{{$jual->penjualanid}}</td>
+  <td>{{$jual->tanggalpejual}}</td>
+  <td>{{$jual->totalharga}}</td>
 
 
 @endforeach
@@ -139,7 +146,9 @@
 
 </a></td>
 </tr>
-
-</div> 
+     
+  </div> 
+</table>
+  
 </body>
 </html>
