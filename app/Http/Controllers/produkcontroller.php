@@ -20,13 +20,13 @@ class produkcontroller extends Controller
           $namaproduk = $request ->namaproduk;
           $harga = $request ->harga;
           $stok = $request ->stok;
-          $created_at = $request ->created_at;
+          // $created_at = $request ->created_at;
       
           $produk = DB::table('produk')->insert([
               'namaproduk' => $namaproduk,
               'harga' => $harga,
               'stok' => $stok,
-              'created_at' => $created_at
+              //'created_at' => $created_at
                
           ]);
           return redirect('/produk');

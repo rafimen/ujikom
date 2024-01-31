@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-<div style="display-flex">   
-@include('layout.nav') 
-<div style="display:flex;">
+    @include('layout.nav')
+    <div style="display:flex;">
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 200px; left:10%; height:90vh;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
       <svg class="bi me-2" width="40" height="40"><use xlink:href="#bootstrap"></use></svg>
       <span class="fs-6" style="left:10%;">Kasir-Men</span>
-    </a>   
+    </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
@@ -66,89 +66,92 @@
    </a>
    </div>
    <div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+    <br>
+    <h1 style="text-align: center">PENJUALAN</h1>
+    <br>
+    <div class="container">
+        <form action={{ url('/tambah_penjualan') }} method="POST">
+            @method('POST')
+            @csrf
+            <label class="row row-cols-lg-auto g-3 align-items-center"
+                style="  display: grid; grid-template-columns: auto auto auto; gap: 10px 10px;">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="container">
-<h3 style="text-align: center;">DATA BARANG</h3>
-<table class="table">
-   <thead>
-       <tr>
-       <th scope="col">produkid</th>
-       <th scope="col">nama barang</th>
-       <th scope="col">harga</th>
-       <th scope="col">stok barang</th>
+                <div class="col-12">
+                    <select class="form-select"  name="produk">
+                        <option selected>Pilih Produk...</option>
+                        @foreach ($produk as $produk)
+                            <option value="{{$produk->produkid}}" >{{ $produk->namaproduk }}
+                           </option>
+                        @endforeach
+                    </select>
+                </div>
+                <input type="hidden" name="penjualanid" value={{ $penjualanid }}>
+                <div class="col-12">
+                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Jumlah Produk</label>
+                    <div class="input-group">
+                        <div class="form-outline" style="width: 22rem;">
+                            <input value="qty" min="1" type="number" id="typeNumber" class="form-control"
+                                placeholder="qty" name="qty" />
+                        </div>
+                    </div>
+                </div>
+                <select class="form-select" name ="pelanggan" >
+                    <option selected>Nama Pelanggan</option>
+                    @foreach ($pelanggan as $pelanggan)
+                        <option value="{{$pelanggan->pelangganid}}" >{{ $pelanggan->namapelanggan }}</option>
+                    @endforeach
+                </select>
 
-       </tr>
-   </thead>
-   <tbody>
-  @foreach($produk as $produk)                                                          
-  <tr>
-  <td>{{$produk->produkid}}</td>
-  <td>{{$produk->namaproduk}}</td>
-  <td>Rp {{$produk->harga}}</td>
-  <td>{{$produk->stok}}</td>
- 
-  <td>
-    <div style="width:40%;">
-    <input type="number" class="form-control" name="Qty" placeholder="Qty" min="1" required></div>
-  </td>
-@endforeach
-</tr>
-</form>
-</table>
-</tbody>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-       
-      </div>
+                <div class="col-12">
+                    <button class="btn btn-outline-dark">Tambah</button>
+                </div>
+            </label>
+        </form>
+    <BR><br>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered" style="width:80%">
+                <thead>
+                    <tr>
+                        <th scope="col" style="text-align: center; width:5%">no</th>
+                        <th scope="col" style="text-align: center; width:5%">Nama Produk</th>
+                        <th scope="col" style="text-align: center; width:5%">Harga</th>
+                        <th scope="col" style="text-align: center;width:5%">Qty</th>
+                        <th scope="col" style="text-align: center; width:5%">Sub Total</th>
+                    </tr>
+                </thead>
+                <?php $no = 1; 
+                      $totalharga = 0?>
+                <tbody>
+                    @foreach($detailpenjualan as $detailpenjualan   )
+                    <tr>
+                        <th>{{$no++}}</th>
+                        <th>{{$detailpenjualan->namaproduk}}</th>
+                        <th>{{$detailpenjualan->harga}}</th>
+                        <th>{{$detailpenjualan->jumlahproduk}}</th>
+                        <th>{{$detailpenjualan->Subtotal}}</th>
+                        <?php  $totalharga = $totalharga + $detailpenjualan->Subtotal ?>
+                    </tr>
+                    @endforeach
+                </tbody>
 
-  </div>
-  </div>
-   </table>
-  </div>     
- 
-  </div>
+            </table>
+            <div class="container">
+            <div class="checkout">
+            <h1> Total Harga : {{number_format($totalharga,0,',','.')}}</h1>
+   <form action="{{url ('checkout')}}" method="POST">
+   @method('POST')
+   @csrf
+    <input type="hidden" name="penjualanid" value="{{$penjualanid}}">   
+    <input type="hidden" name="totalharga" value="{{$totalharga}}">   
 
-  <div class="container">
-<h3 style="text-align: center;">DATA BARANG</h3>
-<table class="table">
-   <thead>
-       <tr>
-       <th scope="col">id</th>
-       <th scope="col">tanggal jual</th>
-       <th scope="col">total harga</th>
-       </tr>
-   </thead>
-   <tbody>
-  @foreach($jual as $jual)                    
-  <tr>
-  <td>{{$jual->penjualanid}}</td>
-  <td>{{$jual->tanggalpejual}}</td>
-  <td>{{$jual->totalharga}}</td>
+    <input type="submit" name="submit" value="checkout">
+    </form>   
+    </form>
+    </div>
+    </div>
+    </div>
 
-
-@endforeach
-
-
-
-</a></td>
-</tr>
-     
-  </div> 
-</table>
-  
 </body>
+
 </html>

@@ -39,3 +39,6 @@ Route::POST('/updatepelanggan/{id}', [pelanggancontroller::class,'proses_update'
 
 
 Route::get('/penjualan', [penjualancontroller::class,'penjualan']);
+Route::POST('/tambah_penjualan', [penjualancontroller::class,'tambah']);
+Route::get('/data_penjualan', [penjualancontroller::class,'data_penjualan']);
+Route::POST('/checkout', [penjualancontroller::class,'checkout']);
