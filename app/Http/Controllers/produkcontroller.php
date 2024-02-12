@@ -44,12 +44,18 @@ class produkcontroller extends Controller
       function update($id){
         $produk = DB::table('produk')->where('produkid', $id)->first();
         return view('/update',['produk' =>$produk]);
+        // return $produk;
       }  
         
   function proses_update(request $request , $id){
     $namaproduk = $request-> namaproduk;
+    $harga = $request->harga;
+    $stok = $request->stok;
+
     DB::table('produk')->where('produkid',$id )->update([
-        'namaproduk' => $namaproduk
+        'namaproduk' => $namaproduk,
+        'harga' => $harga,
+        'stok' => $stok
     ]);
     return redirect('/produk');
 }

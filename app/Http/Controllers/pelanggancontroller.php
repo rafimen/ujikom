@@ -39,18 +39,23 @@ class pelanggancontroller extends Controller
       $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->get();
       return view('/detailpelanggan',['pelanggan' => $pelanggan]);
    }
-      function updatepelanggan($id){
-     $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->first();
-     return view('/updatepelanggan',['pelanggan' =>$pelanggan]);
-   }  
-     
-function proses_update(request $request , $id){
- $namapelanggan = $request-> namapelanggan;
- DB::table('pelanggan')->where('pelangganid',$id )->update([
-     'namapelanggan' => $namapelanggan
- ]);
- return redirect('/pelanggan');
-      
-   }
+      function update($id){
+        $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->first();
+        return view('/updatepelanggan',['pelanggan' =>$pelanggan]);
+        // return $produk;
+      }  
+    function proses_update(request $request , $id){
+    $namapelanggan = $request-> namapelanggan;
+    $alamat = $request->alamat;
+    $nomortelepon = $request->nomortelepon;
+
+    DB::table('pelanggan')->where('pelangganid',$id )->update([
+        'namapelanggan' => $namapelanggan,
+        'alamat' => $alamat,
+        'nomortelepon' => $nomortelepon
+    ]);
+    return redirect('/pelanggan');
+}
+
 
       }

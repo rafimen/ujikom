@@ -27,7 +27,7 @@ class penjualancontroller extends Controller
         }
 
         $detailpenjualan = DB::table('produk')->where("penjualanid", $penjualanid)
-        ->join("detailpenjualan","produk.produkid","=",'detailpenjualan.produkid')
+         ->join("detailpenjualan","produk.produkid","=",'detailpenjualan.produkid')
         ->get();
 
 
@@ -63,11 +63,13 @@ class penjualancontroller extends Controller
 
     function data_penjualan(){
         $penjualan = DB::table('pelanggan')
-        ->join('penjualan', 'penjualan.penjualanid', '=', 'pelanggan.penjualanid')
+        ->join('penjual', 'penjual.penjualanid', '=', 'pelanggan.pelangganid')
         ->get();
         // return $penjualan;
-        return view ('penjualan',['penjualan'=> $penjualan]);
+        return view ('datapenjualan',['penjualan'=> $penjualan]);
     }
+
+
     function checkout(request $request){
         $updatedata = DB::table('penjual')->where('penjualanid',$request->penjualanid)->update([
             'status' => 'selesai',
@@ -77,6 +79,8 @@ class penjualancontroller extends Controller
             return redirect()->back()->with("info maszeh","done bang");
         }
     }
+
+
     function detailpenjualan($id){
         $detail = DB::table('detailpenjualan')
         ->join('produk','produk.produkid','=','detailpenjualan.produkid')
@@ -87,4 +91,5 @@ class penjualancontroller extends Controller
     }
 
 
+ 
 }

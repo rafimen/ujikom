@@ -63,45 +63,32 @@
    </a>
    </div>
    <div class="container">
-<h3 style="text-align: center;">PELANGGAN</h3>
+<h3 style="text-align: center;">DETAIL BARANG</h3>
 <table class="table">
    <thead>
-       <tr>
-       <th scope="col">id</th>
-       <th scope="col">nama pelanggan</th>
-       <th scope="col">alamat</th>
-       <th scope="col">nomor telepon</th>
-       <th scope="col">opsi</th>
-       </tr>
+        <tr>
+        <th scope="col">Nama pelanggan</th>
+        <th scope="col">Tanggal jual</th>
+        <th scope="col">Total</th>
+        <th scope="col">Status</th>
+        <th scope="col">Opsi</th>
+        </tr>
    </thead>
    <tbody>
-  @foreach($pelanggan as $pelanggan)                                                             
+  @foreach($penjualan as $penjualan)                                                             
   <tr>
-  <td>{{$pelanggan->pelangganid}}</td>
-  <td>{{$pelanggan->namapelanggan}}</td>
-  <td>{{$pelanggan->alamat}}</td>
-  <td>{{$pelanggan->nomortelepon}}</td>
-<td>
-<a href="delete/{{$pelanggan->pelangganid}}" class="btn btn-outline-danger">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-  </svg>
-</a>
-  <a href="detailpelanggan/{{$pelanggan->pelangganid}}" class="btn btn-outline-danger">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
-  <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-  <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
-  </svg>
-  </a>
-
-
-</td>
-
+    
+   <td>{{$penjualan->namapelanggan}}</td>
+   <td>{{$penjualan->tanggalpenjual}}</td>
+   <td>{{$penjualan->totalharga}}</td>
+   <td>{{$penjualan->status}}</td>
+  <td>
+    <a href="detailpenjualan/{{$penjualan->penjualanid}}"><button type="button" class="btn btn-outline-danger">Danger</button></a>
+  </td>
 </tr>
-
-  @endforeach
+@endforeach
 </tbody>
-<a href="tambahpelanggan" class="btn btn-danger" type="submit" href>tambah</a>
+
       </div>
     </div>
   </div>

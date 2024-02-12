@@ -45,11 +45,11 @@
         </a>
       </li>
       <li>
-        <a href="customers" class="nav-link text-white">
+        <a href="pelanggan" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use>
           <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
         </svg>
-          Customers
+        pelanggan
         </a>
       </li>
     </ul>
@@ -67,23 +67,26 @@
 <table class="table">
    <thead>
         <tr>
-        <th scope="col">id</th>
-        <th scope="col">nama pelanggan</th>
-        <th scope="col">alamat</th>
-        <th scope="col">nomor telepon</th>
-        <th scope="col">opsi</th>
+        <th scope="col">no</th>
+        <th scope="col">Produk id</th>
+        <th scope="col">Tanggal penjualan</th>
+        <th scope="col">Harga satuan</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Status</th>
+        <th scope="col">Item discount</th>
         </tr>
    </thead>
    <tbody>
-  @foreach($detailpenjualan as $detailpenjualan)                                                             
+  @foreach($detail as $detail)           
+  <?php $no=1;?>                                                  
   <tr>
-   <td>{{$detailpenjualan->pelangganid}}</td>
-   <td>{{$detailpenjualan->namapelanggan}}</td>
-   <td>{{$detailpenjualan->alamat}}</td>
-   <td>{{$detailpenjualan->nomortelepon}}</td>
-  <td>
-  <a href="updatepelanggan/{{$pelanggan->pelangganid}}" class="btn btn-outline-danger">
-  </td>
+    <td>{{$no++}}</td>
+   <td>{{$detail->produkid}}</td>
+   <td>{{$detail->tanggalpenjual}}</td>
+   <td>{{$detail->totalharga}}</td>
+   <td>{{$detail->jumlahproduk}}</td>
+   <td>{{$detail->status}}</td>
+   <td>0.00,-</td>
 </tr>
 @endforeach
 </tbody>
