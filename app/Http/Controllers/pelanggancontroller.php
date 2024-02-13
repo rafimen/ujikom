@@ -40,16 +40,16 @@ class pelanggancontroller extends Controller
       return view('/detailpelanggan',['pelanggan' => $pelanggan]);
    }
       function update($id){
-        $pelanggan = DB::table('pelanggan')->where('pelangganid', $id)->first();
+        $pelanggan = DB::table('pelanggan')->where('pelangganid', '=', $id)->first();
         return view('/updatepelanggan',['pelanggan' =>$pelanggan]);
         // return $produk;
       }  
-    function proses_update(request $request , $id){
+    function proses_update(request $request, $id){
     $namapelanggan = $request-> namapelanggan;
     $alamat = $request->alamat;
     $nomortelepon = $request->nomortelepon;
 
-    DB::table('pelanggan')->where('pelangganid',$id )->update([
+    DB::table('pelanggan')->where('pelangganid','=', $id )->update([
         'namapelanggan' => $namapelanggan,
         'alamat' => $alamat,
         'nomortelepon' => $nomortelepon

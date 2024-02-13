@@ -82,7 +82,7 @@
    <td>{{$pelanggan->alamat}}</td>
    <td>{{$pelanggan->nomortelepon}}</td>
   <td>
-  <a href="updatepelanggan/{{$pelanggan->pelangganid}}" class="btn btn-outline-danger">
+  <a href="update-pel/{{$pelanggan->pelangganid}}" class="btn btn-outline-danger">
   </td>
 </tr>
 @endforeach
@@ -92,7 +92,7 @@
     </div>
   </div>
 </nav>
-  </div>
+</div>
 </div>
 </body>
 </html>

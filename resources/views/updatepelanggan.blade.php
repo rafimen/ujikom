@@ -62,7 +62,7 @@
    </a>
 
    <div class="container">
-<form action={{url("/updatepelanggan/$pelanggan->pelangganid")}} method="POST">
+<form action={{url("/update-pel/$pelanggan->pelangganid")}} method="POST">
   @method("POST")
   @csrf
 <div>
