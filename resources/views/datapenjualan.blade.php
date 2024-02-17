@@ -83,7 +83,7 @@
    <td>{{$penjualan->totalharga}}</td>
    <td>{{$penjualan->status}}</td>
   <td>
-    <a href="detailpenjualan/{{$penjualan->penjualanid}}"><button type="button" class="btn btn-outline-danger">Danger</button></a>
+    <a href="detailpenjualan/{{$penjualan->penjualanid}}"><button type="button" class="btn btn-outline-danger">detail</button></a>
   </td>
 </tr>
 @endforeach

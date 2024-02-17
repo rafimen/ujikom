@@ -141,7 +141,9 @@
 <br>
 
 
-
+<form action={{url("/update/$pelanggan->pelangganid")}} method="POST">
+  @method("POST")
+  @csrf
 
 <div class="container">
 <form action={{url("/update-p/$produk->produkid")}} method="POST">

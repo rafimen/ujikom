@@ -87,7 +87,8 @@ class penjualancontroller extends Controller
         ->join('penjual','penjual.penjualanid','=','detailpenjualan.penjualanid')
         ->where('detailpenjualan.penjualanid',$id)
         ->get();
-        return view('/detailpenjualan',['detail'=>$detail]);
+        return $detail;
+        // return view('/detailpenjualan',['detail'=>$detail]);
     }
 
 

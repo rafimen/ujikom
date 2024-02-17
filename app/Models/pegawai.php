@@ -17,4 +17,5 @@ class pegawai extends Authenticatable
     protected $fillabel = ['pegawai_id','nama_pegawai','username','password','telp','level'];
 
     protected $table ="pegawai";
+    
 }

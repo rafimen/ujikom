@@ -107,7 +107,7 @@
                 </div>
             </label>
         </form>
-    <BR><br>
+    <br>
     <div class="container">
         <div class="table-responsive">
             <table class="table table-bordered" style="width:80%">

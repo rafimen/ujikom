@@ -33,8 +33,9 @@ Route::POST('/tambahpelanggan', [pelanggancontroller::class,'proses_pelanggan'])
 
 Route::get('/delete/{id}', [pelanggancontroller::class,'delete']);
 Route::get('/detailpelanggan/{id}', [pelanggancontroller::class,'detailpelanggan']);
-Route::get('/update', [pelanggancontroller::class,'update']);
-Route::POST('/update', [pelanggancontroller::class,'proses_update']);
+Route::get('/update/{id}', [pelanggancontroller::class,'update']);
+Route::POST('/update/{id}', [pelanggancontroller::class,'proses_update']);
+
 
 Route::get('/penjualan', [penjualancontroller::class,'penjualan']);
 Route::POST('/tambah_penjualan', [penjualancontroller::class,'tambah']);
